@@ -1,15 +1,17 @@
 function saturdayFun(activity = "roller-skate") {
-    return `This Saturday, I want to ${activity}!`;
+  return `This Saturday, I want to ${activity}!`;
+}
+
+function mondayWork(task = "go to the office") {
+  return `This Monday, I will ${task}.`;
+}
+
+function wrapAdjective(flair = "*") {
+  return function(adjective = "special") {
+    return `You are ${flair}${adjective}${flair}!`;
   }
-  
-  // mondayWork function
-  function mondayWork(activity = "go to the office") {
-    return `This Monday, I will ${activity}.`;
-  }
-  
-  // wrapAdjective function
-  function wrapAdjective(flair = "*") {
-    return function(adjective = "special") {
-      return `You are ${flair}${adjective}${flair}!`;
-    }
-  }
+}
+
+const encouragingPromptFunction = wrapAdjective("!!!");
+console.log(encouragingPromptFunction("awesome")); // Output: You are !!!awesome!!!
+console.log(encouragingPromptFunction()); // Output: You are !!!special!!!
